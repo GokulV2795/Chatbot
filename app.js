@@ -20,34 +20,25 @@ function render() {
     <!-- Header -->
     <div class="flex items-center gap-3 mb-6">
       <div class="h-10 w-10 rounded-2xl bg-slate-900 grid place-items-center text-white shadow">
-        <i data-lucide="bot" class="w-5 h-5"></i>
+        <i data-lucide="Milk" class="w-5 h-5"></i>
       </div>
       <div>
-        <h1 class="text-2xl font-semibold">Chatbot Console</h1>
-        <p class="text-sm text-slate-500">Slicer → Execute → Chat → Approve/Reject</p>
+        <h1 class="text-2xl font-semibold">Low Quality Detector</h1>
+        <p class="text-sm text-slate-500"></p>
       </div>
     </div>
 
     <!-- Slicer -->
     <div class="bg-white shadow-sm border border-slate-200 rounded-xl p-4 mb-6">
-      <h2 class="flex items-center gap-2 text-lg mb-2"><i data-lucide="filter" class="w-4 h-4"></i> Slicer</h2>
+      <h2 class="flex items-center gap-2 text-lg mb-2"><i data-lucide="filter" class="w-4 h-4"></i>AI Bot</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         <div>
-          <label class="text-xs text-slate-500">Scenario</label>
+          <label class="text-xs text-slate-500">Region</label>
           <select id="scenario" class="w-full border rounded p-2">
             <option value="support">Customer Support</option>
             <option value="sales">Sales Assistant</option>
             <option value="ops">Operations Helper</option>
             <option value="custom">Custom Workflow</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs text-slate-500">Model</label>
-          <select id="model" class="w-full border rounded p-2">
-            <option value="gpt-4o-mini">GPT-4o mini</option>
-            <option value="gpt-4.1">GPT-4.1</option>
-            <option value="llama3.1">Llama 3.1</option>
-            <option value="mistral-large">Mistral Large</option>
           </select>
         </div>
         <div class="flex gap-2 items-end">
