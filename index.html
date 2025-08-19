@@ -1,25 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chatbot Console</title>
-   
   <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/ryuu.js@4.6.0/dist/domo.js" integrity="sha384-YYsd9wQ+wDlUWhvpfGdptxmNYIqBC+52oJtWgPKJadbs3sSFTY/+ZotPbEHTTRWz" crossorigin="anonymous"></script>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 p-4 md:p-8">
-  <div id="app" class="max-w-6xl mx-auto"></div>
+  <div class="max-w-6xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+      <div class="h-10 w-10 rounded-2xl bg-slate-900 grid place-items-center text-white shadow">
+        <i data-lucide="milk" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h1 class="text-2xl font-semibold">Low Quality Detector</h1>
+        <p class="text-sm text-slate-500">A Regional analysis of Milk Patterns</p>
+      </div>
+    </div>
+
+    <!-- Location / Region -->
+    <div class="bg-white shadow-sm border border-slate-200 rounded-xl p-4 mb-6">
+      <h2 class="flex items-center gap-2 text-lg mb-3">
+        <i data-lucide="map-pin" class="w-4 h-4"></i> Location
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-[minmax(260px,1fr)_auto] gap-3">
+        <div>
+          <label class="text-xs text-slate-400"></label>
+           <select id="regionSelect" class="w-full border rounded p-3">
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button id="detectBtn" class="bg-slate-900 text-white px-4 py-3 rounded flex items-center gap-2">
+            <i data-lucide="play" class="w-4 h-4"></i> Detect
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat panel -->
+    <div class="bg-white shadow-sm border border-slate-200 rounded-xl flex flex-col h-[620px] relative">
+      <!-- Modal -->
+      <div id="modalOverlay" class="hidden absolute inset-0 bg-black/30 backdrop-blur-[1px] z-20">
+        <div class="h-full w-full grid place-items-center p-4">
+          <div class="bg-white rounded-xl p-6 shadow-xl max-w-md w-full border border-slate-200 text-center">
+            <div class="mx-auto h-10 w-10 rounded-full bg-slate-900 text-white grid place-items-center mb-3">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Processing</h3>
+            <p class="text-sm text-slate-600">
+              The Agent is analysing, please wait for a moment.<br>
+              Thank you for your patience.
+            </p>
+          </div>
+        </div>
+      </div>
+
+  <!--Send Button-->
+  <!-- Footer: Response tab + Send -->
+<div class="border-t p-3">
+  <div class="flex items-center gap-2">
+    <!-- Simple single tab: Response -->
+    <div class="flex gap-1 rounded-lg bg-slate-100 p-1" role="tablist" aria-label="Output Tabs">
+      <button id="tab-response" class="px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 text-sm font-medium" role="tab" aria-selected="true">
+        Response
+      </button>
+    </div>
+   <button id="sendBtn" class="ml-auto bg-slate-900 text-white px-4 py-2 rounded flex items-center gap-2">
+      <i data-lucide="send" class="w-4 h-4"></i> Send
+    </button>
+  </div>
+
+  <!-- Where we’ll render the latest suggestions -->
+  <div id="responsePanel" class="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm overflow-auto max-h-60">
+    The response will appear here after the click of <b>Detect</b>.
+  </div>
+</div>
 
   <!-- Script -->
   <script src="app.js"></script>
+
   <script>
     lucide.createIcons(); // activate Lucide icons
   </script>
-   <script src="https://unpkg.com/ryuu.js"></script>
-</body>
-</html>
+
+
+</div></div></body></html>

@@ -1,0 +1,93 @@
+{
+   "id": "065436ee-3883-423f-b25c-a46165c0333d",
+   "name": "Low Quality Milk Detector",
+   "version": "0.0.1",
+   "datasetsMapping": [
+      {
+         "dataSetId": "5c0b9c87-9276-4ab2-bdbd-dd889f3db814",
+         "alias": "",
+         "fields": [
+            {
+               "alias": "Executor",
+               "columnName": "Executor"
+            },
+            {
+               "alias": "Timestamp",
+               "columnName": "Timestamp"
+            },
+            {
+               "alias": "Region",
+               "columnName": "Region"
+            },
+            {
+               "alias": "LowQualityMilkPatterns",
+               "columnName": "Low_Quality_Milk_Patterns"
+            },
+            {
+               "alias": "FarmerPatterns",
+               "columnName": "Farmer_Patterns"
+            },
+            {
+               "alias": "Recommendation",
+               "columnName": "Recommendation"
+            }
+         ],
+         "dql": null
+      },
+      {
+         "dataSetId": "f042effc-85d3-46ed-8f46-d38497740906",
+         "alias": "regiondataset",
+         "fields": [
+            {
+               "alias": "Region",
+               "columnName": "Region"
+            }
+         ],
+         "dql": null
+      }
+   ],
+   "size": {
+      "width": "3",
+      "height": "3"
+   },
+   "workflowsMapping": [
+      {
+         "startName": "Start Low Quality Detector Milky Mist",
+         "alias": "MailTrigger",
+         "modelId": "9d1252d3-c8b6-4032-b690-6baf2c7de447",
+         "parameters": [],
+         "version": "1.0.2"
+      },
+      {
+         "startName": "Start Low Quality Milk Pattern Detector",
+         "alias": "LQM",
+         "modelId": "9d1252d3-c8b6-4032-b690-6baf2c7de447",
+         "parameters": [
+            {
+               "name": "Region",
+               "displayName": "Region",
+               "subString": null,
+               "type": "text",
+               "visible": true,
+               "value": null,
+               "required": true,
+               "isList": false,
+               "children": [],
+               "nullable": false,
+               "entitySubType": null,
+               "aliasedName": "Region"
+            }
+         ],
+         "version": "1.0.1"
+      }
+   ],
+   "packagesMapping": [
+      {
+         "name": "DOMO AppDB Collections",
+         "alias": "",
+         "packageId": "63531352-593e-451a-8de5-406d9f4e9bd2",
+         "version": "2.0.13"
+      }
+   ],
+   "fullpage": true
+}
